@@ -65,6 +65,49 @@ const TextEditor = ({ value, onChange }) => {
 export default TextEditor;
 ```
 
-3. 
-4. 
+3. Next to it, create a file named TextEditor.css and paste the following:
+
+ ```
+.editor-wrapper {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+```
+
+---
+
+### ✅ 5. Edit App.js
+
+Replace everything in src/App.js with the following:
+
+```
+import React, { useState } from 'react';
+import TextEditor from './components/TextEditor';
+
+function App() {
+  const [content, setContent] = useState('');
+
+  return (
+    <div className="App">
+      <h2>React + Froala Editor Demo</h2>
+      <TextEditor value={content} onChange={setContent} />
+      <h4>Editor Output:</h4>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+### ✅ 6. Start Your App
+
+Back in the terminal, run:
+
+`npm start`
+
+Your browser will open to http://localhost:3000 with the Froala Rich Text Editor integrated into your React app!
    
